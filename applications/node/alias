@@ -1,0 +1,5 @@
+alias dockerized-update-all-maven='dockerized-update-8-node || true \
+                 && dockerized-update-10-node || true \
+                 && dockerized-update-12-node || true \
+                 && dockerized-update-13-node || true \
+                 && dockerized-update-node || true'

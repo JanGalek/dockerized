@@ -1,0 +1,2 @@
+alias terraform12='docker run --rm --interactive --tty --volume $PWD:/app -w /app hashicorp/terraform:0.12.18 terraform '
+alias dockerized-update-12-terraform='docker pull terraform:0.12.18'

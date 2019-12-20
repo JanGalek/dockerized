@@ -1,0 +1,3 @@
+alias composer='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) composer'
+alias composerlatest='composer'
+alias dockerized-update-composer='docker pull composer'

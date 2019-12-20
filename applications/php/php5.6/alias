@@ -1,0 +1,2 @@
+alias php56='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) php:5.6 php'
+alias dockerized-update-56-php='docker pull php:5.6'

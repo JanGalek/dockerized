@@ -1,0 +1,2 @@
+alias go112='docker run --rm --interactive --tty --volume $PWD:/app -w /app golang:1.12 go '
+alias dockerized-update-112-go='docker pull golang:1.12'

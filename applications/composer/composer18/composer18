@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) composer:1.8 composer $@

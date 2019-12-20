@@ -1,0 +1,4 @@
+alias dockerized-update-all-go='dockerized-update-1-go || true \
+                 && dockerized-update-112-go || true \
+                 && dockerized-update-113-go || true \
+                 && dockerized-update-go || true'

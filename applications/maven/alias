@@ -1,0 +1,4 @@
+alias dockerized-update-all-maven='dockerized-update-3-maven || true \
+                 && dockerized-update-35-maven || true \
+                 && dockerized-update-36-maven || true \
+                 && dockerized-update-maven || true'

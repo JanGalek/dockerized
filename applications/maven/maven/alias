@@ -1,0 +1,3 @@
+alias maven='docker run --rm --interactive --tty --volume $PWD:/app -w /app maven mvn '
+alias mvn='maven '
+alias dockerized-update-maven='docker pull maven'
