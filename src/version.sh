@@ -10,6 +10,8 @@ selectVersion() {
     local application="$1"
     shift
     local versions=(`cd ${ROOT_DIR}/applications/${application}/ && ls -d */ | cut -f 1 -d '/'`)
+    local formats=("application1.6" "application16" "application1-6" "application-1.6" "application-16" "application-1-6" )
+
 
     makeSelectionWithAll \
       "version" \
@@ -19,6 +21,11 @@ selectVersion() {
     makeYesNoSelection \
         "versionAlias" \
         "Register automatically application with versions suffix?"
+
+    makeSelection \
+        "versionAliasSuffix" \
+        "Which format of suffix?" \
+        "${formats[@]}"
 
     if [[ $version == "All" ]]; then
         makeSelection \
