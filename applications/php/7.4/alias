@@ -1,2 +1,2 @@
-alias php74='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) php:7.4 php'
-alias dockerized-update-74-php='docker pull php:7.4'
+alias php='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) php:7.4 php'
+alias dockerized-update-php='docker pull php:7.4'

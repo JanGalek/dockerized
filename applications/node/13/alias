@@ -1,4 +1,4 @@
-alias node13='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) node:13 node '
-alias npm13-6='docker run --rm --interactive --tty --volume $PWD:/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:13 npm --loglevel=warn '
-alias npx13-6='docker run --rm --interactive --tty --volume $PWD:/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:13 npx --loglevel=warn '
-alias dockerized-update-13-node='docker pull node:13'
+alias node='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) node:13 node '
+alias npm='docker run --rm --interactive --tty --volume $PWD:/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:13 npm --loglevel=warn '
+alias npx='docker run --rm --interactive --tty --volume $PWD:/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:13 npx --loglevel=warn '
+alias dockerized-update-node='docker pull node:13'

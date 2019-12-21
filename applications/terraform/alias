@@ -1,3 +1,0 @@
-alias dockerized-update-all-terraform='dockerized-update-terraform || true \
-                                      && dockerized-update-11-terraform || true \
-                                      && dockerized-update-12-terraform || true'

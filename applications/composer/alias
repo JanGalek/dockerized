@@ -1,6 +1,0 @@
-alias dockerized-update-all-composer='dockerized-update-1-composer || true \
-                 && dockerized-update-16-composer || true \
-                 && dockerized-update-17-composer || true \
-                 && dockerized-update-18-composer || true \
-                 && dockerized-update-19-composer || true \
-                 && dockerized-update-composer || true'

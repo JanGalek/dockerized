@@ -1,3 +1,2 @@
-alias maven3='docker run --rm --interactive --tty --volume $PWD:/app -w /app maven:3 mvn '
-alias mvn3='maven3 '
-alias dockerized-update-3-maven='docker pull maven:3'
+alias maven='docker run --rm --interactive --tty --volume $PWD:/app -w /app maven:3 mvn '
+alias dockerized-update-maven='docker pull maven:3'

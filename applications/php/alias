@@ -1,7 +1,0 @@
-alias dockerized-update-all-php='dockerized-update-56-php || true \
-                 && dockerized-update-70-php || true \
-                 && dockerized-update-71-php || true \
-                 && dockerized-update-72-php || true \
-                 && dockerized-update-73-php || true \
-                 && dockerized-update-74-php || true \
-                 && dockerized-update-php || true'
