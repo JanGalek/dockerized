@@ -1,2 +1,2 @@
 alias composer='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) composer:1.8 composer '
-alias dockerized-update-18-composer='docker pull composer:1.8'
+alias dockerized-update-composer='docker pull composer:1.8'
