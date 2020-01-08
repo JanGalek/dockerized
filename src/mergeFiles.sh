@@ -18,6 +18,7 @@ mergeFiles() {
     local aliasCustomFile="${aliasFile}Custom"
     local latestAlias="alias ${application}="
     local updateAlias="alias dockerized-update-${application}="
+    local binaryPath="$HOME_DIR/bin/dockerized"
 
     if [[ -f "$DOCKERIZED_FILE" ]]; then
         mv ${DOCKERIZED_FILE} ${dockerizedOld}
@@ -56,14 +57,15 @@ mergeFiles() {
         fi
     done < ${dockerizedOld} > ${dockerizedOld}${version}
 
+    echo -e "export PATH=\044{PATH}:$binaryPath" > ${dockerizedOld}export
+    echo -e "autoload -U +X bashcompinit && bashcompinit" > ${dockerizedOld}export
+    echo -e "autoload -U +X compinit && compinit" > ${dockerizedOld}export
+
     echo "---------\Merging files/---------------"
-    sort ${dockerizedOld}${version} ${aliasCustomFile}${version} | uniq >> ${DOCKERIZED_FILE}
+    sort ${dockerizedOld}${version} ${aliasCustomFile}${version} ${dockerizedOld}export | uniq >> ${DOCKERIZED_FILE}
     echo "---------\Removing tmp files/---------------"
     rm ${dockerizedOld}
     rm ${dockerizedOld}${version}
     rm ${aliasCustomFile}${version}
 
 }
-
-#alias composer='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) composer:1 composer'
-#alias dockerized-update-composer='docker pull composer:1'

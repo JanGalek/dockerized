@@ -7,9 +7,9 @@ source "${SCRIPT_DIR}/mergeFiles.sh"
 source "${SCRIPT_DIR}/version.sh"
 
 registerAliasAndScript() {
-    locale application="$1"
+    local application="$1"
     shift
-    locale version="$1"
+    local version="$1"
     shift
 
     printf "\r\n${latest}\r\n"

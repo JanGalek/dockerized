@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/" && pwd )"
+source "${SCRIPT_DIR}/installBinaries.sh"
 
 selectVersion() {
     local ROOT_DIR="$1"
@@ -26,6 +28,10 @@ selectVersion() {
           "Which version of ${application} register as ${application}?" \
           "${versions[@]}"
 
+        makeYesNoSelection \
+            "binary" \
+            "Install ${application} as binary?"
+
       for version2 in "${versions[@]}"
       do
         if [[ $versionAlias == "No" ]]; then
@@ -34,10 +40,10 @@ selectVersion() {
                 "Register ${application}:${version2} as ${application}${version2}?"
         fi
 
-        if [[ $latest == $version2 ]]; then
-            latest="Yes"
+        if [[ $latest == "$version2" ]]; then
+            latestAnswer="Yes"
         else
-            latest="No"
+            latestAnswer="No"
         fi
         installApplication \
             "${ROOT_DIR}" \
@@ -45,7 +51,16 @@ selectVersion() {
             "${DOCKERIZED_FILE}" \
             "${application}" \
             "${version2}" \
-            "${latest}"
+            "${latestAnswer}"
+
+        if [[ $binary == "Yes" ]]; then
+          installBinaries \
+              "${ROOT_DIR}" \
+              "${HOME_DIR}" \
+              "${application}" \
+              "${version2}" \
+              "${latestAnswer}"
+        fi
       done
     else
         makeYesNoSelection \
@@ -59,6 +74,15 @@ selectVersion() {
             "${application}" \
             "${version}" \
             "${latest}"
+
+        if [[ $binary == "Yes" ]]; then
+          installBinaries \
+              "${ROOT_DIR}" \
+              "${HOME_DIR}" \
+              "${application}" \
+              "${version}" \
+              "${latest}"
+        fi
     fi
 }
 
