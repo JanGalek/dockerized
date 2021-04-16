@@ -43,7 +43,7 @@ RUN set -eux; \
   curl --silent --fail --location --retry 3 --output /tmp/keys.dev.pub --url https://raw.githubusercontent.com/composer/composer.github.io/master/snapshots.pub; \
   curl --silent --fail --location --retry 3 --output /tmp/keys.tags.pub --url https://raw.githubusercontent.com/composer/composer.github.io/master/releases.pub; \
   curl --silent --fail --location --retry 3 --output /tmp/installer.php --url https://raw.githubusercontent.com/composer/getcomposer.org/master/web/installer; \
-  php /tmp/installer.php --no-ansi --install-dir=/usr/bin --filename=composer \
+  php /tmp/installer.php --no-ansi --install-dir=/usr/bin --filename=composer --2 \
   composer --ansi --version --no-interaction; \
   composer diagnose; \
   rm -f /tmp/installer.php; \
