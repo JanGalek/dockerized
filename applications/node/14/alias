@@ -1,0 +1,4 @@
+alias node='docker run --rm --interactive --tty --volume $PWD:/app -w /app --user $(id -u):$(id -g) node:14 node '
+alias npm='docker run --rm --interactive --tty --volume $PWD:/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:14 npm --loglevel=warn '
+alias npx='docker run --rm --interactive --tty --volume $PWD:/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:14 npx --loglevel=warn '
+alias dockerized-update-node='docker pull node:14'
