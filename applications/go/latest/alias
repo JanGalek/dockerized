@@ -1,2 +1,2 @@
-alias go='docker run --rm --interactive --tty --volume $PWD:/app -w /app golang go '
-alias dockerized-update-go='docker pull golang'
+alias go='docker run --rm --interactive --tty --volume $PWD:/app -w /app golang:latest go '
+alias dockerized-update-go='docker pull golang:latest'
